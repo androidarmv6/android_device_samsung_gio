@@ -12,14 +12,14 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-## MDPI assets
-PRODUCT_AAPT_CONFIG := normal mdpi
-PRODUCT_AAPT_PREF_CONFIG := mdpi
-
 ## Inherit products
 $(call inherit-product, device/samsung/msm7x27-common/common.mk)
 $(call inherit-product, vendor/samsung/gio/vendor_blobs.mk)
 $(call inherit-product, vendor/google/gapps_armv6_tiny.mk)
+
+## MDPI assets
+PRODUCT_AAPT_CONFIG := normal mdpi
+PRODUCT_AAPT_PREF_CONFIG := mdpi
 
 ## Inherit overlays
 $(call inherit-product, device/mdpi-common/mdpi.mk)
