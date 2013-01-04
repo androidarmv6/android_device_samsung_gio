@@ -24,6 +24,9 @@ TARGET_BOOTLOADER_BOARD_NAME := gio
 TARGET_KERNEL_CONFIG := cyanogenmod_gio_defconfig
 TARGET_OTA_ASSERT_DEVICE := gio,GT-S5660
 
+## Camera FC hack
+CAMERA_FC_HACK := true
+
 ## Recovery
 BOARD_LDPI_RECOVERY := true
 BOARD_USE_CUSTOM_RECOVERY_FONT := "<font_7x16.h>"
