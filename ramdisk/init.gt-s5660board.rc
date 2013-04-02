@@ -1,0 +1,14 @@
+# inherit init.msm7x27.rc
+import init.msm7x27.rc
+
+# gio specific init
+
+#on init
+
+#on boot
+
+# service gioservicexxx /path/bin
+#    class main
+#    disabled
+#    oneshot
+

@@ -20,6 +20,7 @@ PRODUCT_PACKAGES += \
 
 ## Ramdisk
 PRODUCT_COPY_FILES += \
+    device/samsung/gio/ramdisk/init.gt-s5660board.rc:root/init.gt-s5660board.rc \
     device/samsung/gio/ramdisk/ueventd.gt-s5660board.rc:root/ueventd.gt-s5660board.rc \
     device/samsung/gio/ramdisk/GIO.rle:root/GIO.rle
 
