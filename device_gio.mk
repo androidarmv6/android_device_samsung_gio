@@ -12,19 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-## Inherit products
-$(call inherit-product, device/samsung/msm7x27-common/common.mk)
-$(call inherit-product, vendor/samsung/gio/vendor_blobs.mk)
-$(call inherit-product, vendor/google/gapps_armv6_tiny.mk)
-
-## MDPI assets
-PRODUCT_AAPT_CONFIG := normal mdpi
-PRODUCT_AAPT_PREF_CONFIG := mdpi
-
-## Inherit overlays
-$(call inherit-product, device/mdpi-common/mdpi.mk)
-DEVICE_PACKAGE_OVERLAYS += device/samsung/gio/overlay
-
 ## Wifi
 PRODUCT_PACKAGES += \
     abtfilt \
@@ -37,3 +24,18 @@ PRODUCT_COPY_FILES += \
     device/samsung/msm7x27-common/ramdisk/init.msm7x27.usb.rc:root/init.msm7x27.usb.rc\
     device/samsung/msm7x27-common/ramdisk/ueventd.msm7x27.rc:root/ueventd.gt-s5660board.rc \
     device/samsung/gio/ramdisk/GIO.rle:root/GIO.rle
+
+# Inherit products (Most specific first)
+# gio blobs > samsung common(device/vendor) > other blobs
+$(call inherit-product, vendor/samsung/gio/vendor_blobs.mk)
+$(call inherit-product, device/samsung/msm7x27-common/common.mk)
+$(call inherit-product, vendor/samsung/msm7x27-common/vendor.mk)
+$(call inherit-product, vendor/google/gapps_armv6_tiny.mk)
+
+## MDPI assets
+PRODUCT_AAPT_CONFIG := normal mdpi
+PRODUCT_AAPT_PREF_CONFIG := mdpi
+$(call inherit-product, device/mdpi-common/mdpi.mk)
+
+## Inherit overlays  (Most specific last)
+DEVICE_PACKAGE_OVERLAYS += device/samsung/gio/overlay
