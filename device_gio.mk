@@ -31,7 +31,6 @@ PRODUCT_COPY_FILES += \
 $(call inherit-product, vendor/samsung/gio/vendor_blobs.mk)
 $(call inherit-product, device/samsung/msm7x27-common/common.mk)
 $(call inherit-product, vendor/samsung/msm7x27-common/vendor.mk)
-$(call inherit-product, vendor/google/gapps_armv6_tiny.mk)
 
 ## MDPI assets
 PRODUCT_AAPT_CONFIG := normal mdpi
