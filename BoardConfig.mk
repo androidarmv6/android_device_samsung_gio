@@ -21,7 +21,11 @@ include device/samsung/msm7x27-common/BoardConfigCommon.mk
 
 ## Kernel, bootloader
 TARGET_BOOTLOADER_BOARD_NAME := gio
-TARGET_KERNEL_CONFIG := cyanogenmod_gio_defconfig
+ifneq (eng,$(TARGET_BUILD_VARIANT))
+	TARGET_KERNEL_CONFIG := cyanogenmod_gio_defconfig
+else
+	TARGET_KERNEL_CONFIG := cyanogenmod_gio_recovery_defconfig
+endif
 TARGET_OTA_ASSERT_DEVICE := gio,GT-S5660
 
 ## Recovery
